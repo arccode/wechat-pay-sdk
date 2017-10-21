@@ -9,6 +9,10 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <name>wechat-pay-sdk</name>
+    <description>wechat pay SDK, out of the box.</description>
+    <url>https://github.com/arccode/wechat-pay-sdk</url>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
@@ -138,10 +142,10 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                        <!-- jdk>=1.8必须配置此选项, 详见: http://www.arccode.com/2017/10/13/publish-artifact-to-maven-central-repository.html -->
+                        <!-- jdk>=1.8必须配置此选项, 详见: http://www.arccode.com/2017/10/13/publish-artifact-to-maven-central-repository.html
                         <configuration>
                             <additionalparam>-Xdoclint:none</additionalparam>
-                        </configuration>
+                        </configuration>-->
                     </execution>
                 </executions>
             </plugin>

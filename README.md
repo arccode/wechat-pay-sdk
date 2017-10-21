@@ -9,11 +9,16 @@
 ## 最近发布
 
 ```
+<dependency>
+    <groupId>net.arccode</groupId>
+    <artifactId>wechat-pay-sdk</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 ## 架构图
 
-![](/images/wx-pay-sdk.jpg)
+![](http://www.arccode.com/images/wx-pay-sdk.jpg)
 
 <!--more-->
 
