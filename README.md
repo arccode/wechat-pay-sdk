@@ -6,6 +6,11 @@
 
 两行代码解决微信支付提供的各种服务, 开箱即用, 可扩展性超强(只需根据服务的上下行协议定义协议类后, 放入工厂即可获取调用结果).
 
+## 最近发布
+
+```
+```
+
 ## 架构图
 
 ![](/images/wx-pay-sdk.jpg)
@@ -132,10 +137,9 @@ LOG.info(JSON.toJSONString(response));
 
 该SDK设计了一个服务工厂, 该工厂中包含HTTP执行器/返回数据解析方式(json/xml)/入参数据格式(json/xml)构造等, 开发人员需要增加服务仅需要根据服务协议文档编写上下行协议, 并在协议中指明API接口和返回数据类型, 再将上行协议放入工厂中执行即可; 可参考已完成的服务协议进行扩展编写.
 
-## 本系列文章
 
-* [开源微信支付SDK-两行代码解决支付](http://www.arccode.com/2017/10/21/wechat-pay-sdk-out-of-the-box.html)
-* 开源微信服务号SDK-两行代码解决API调用
-* 开源支付宝支付SDK-两行代码解决支付
-* 开源平安银行银企直连SDK-两行代码解决API调用
+## License
 
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2017-present, arccode
