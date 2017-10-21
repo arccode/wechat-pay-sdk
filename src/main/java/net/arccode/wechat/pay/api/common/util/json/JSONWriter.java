@@ -53,7 +53,7 @@ public class JSONWriter {
     public String write(char c) {
         return "\"" + c + "\"";
     }
-    
+
     public String write(boolean b) {
         return String.valueOf(b);
     }
@@ -68,11 +68,11 @@ public class JSONWriter {
             else if (object instanceof Number) add(object);
             else if (object instanceof String) string(object);
             else if (object instanceof Character) string(object);
-            else if (object instanceof Map<?, ?>) map((Map<?, ?>)object);
+            else if (object instanceof Map<?, ?>) map((Map<?, ?>) object);
             else if (object.getClass().isArray()) array(object);
-            else if (object instanceof Iterator<?>) array((Iterator<?>)object);
-            else if (object instanceof Collection<?>) array(((Collection<?>)object).iterator());
-            else if (object instanceof Date) date((Date)object);
+            else if (object instanceof Iterator<?>) array((Iterator<?>) object);
+            else if (object instanceof Collection<?>) array(((Collection<?>) object).iterator());
+            else if (object instanceof Date) date((Date) object);
             else bean(object);
             calls.pop();
         }
@@ -86,7 +86,7 @@ public class JSONWriter {
         }
         return false;
     }
-    
+
     private void bean(Object object) {
         add("{");
         BeanInfo info;
@@ -100,7 +100,7 @@ public class JSONWriter {
                 Method accessor = prop.getReadMethod();
                 if ((emitClassName || !"class".equals(name)) && accessor != null) {
                     if (!accessor.isAccessible()) accessor.setAccessible(true);
-                    Object value = accessor.invoke(object, (Object[])null);
+                    Object value = accessor.invoke(object, (Object[]) null);
                     if (value == null) continue;
                     if (addedSomething) add(',');
                     add(name, value);
@@ -123,7 +123,7 @@ public class JSONWriter {
             ite.printStackTrace();
         } catch (IntrospectionException ie) {
             ie.printStackTrace();
-        } 
+        }
         add("}");
     }
 
@@ -146,7 +146,7 @@ public class JSONWriter {
         }
         add("}");
     }
-    
+
     private void array(Iterator<?> it) {
         add("[");
         while (it.hasNext()) {
@@ -168,7 +168,7 @@ public class JSONWriter {
 
     private void bool(boolean b) {
         add(b ? "true" : "false");
-	}
+    }
 
     private void date(Date date) {
         if (this.format == null) {
@@ -180,7 +180,7 @@ public class JSONWriter {
         add("\"");
     }
 
-	private void string(Object obj) {
+    private void string(Object obj) {
         add('"');
         CharacterIterator it = new StringCharacterIterator(obj.toString());
         for (char c = it.first(); c != CharacterIterator.DONE; c = it.next()) {
