@@ -20,7 +20,11 @@
 
 ![](http://www.arccode.com/images/wx-pay-sdk.jpg)
 
-<!--more-->
+## 依赖
+
+* JDK >= 1.7
+
+目前发送`http`采用`okhttp`(更简洁, 更高效), 而`okhttp`依赖的JDK版本必须大于或等于`1.7`, 有需要兼容JDK 1.6的同学可以提`Issues`或`Pull requests`.
 
 ## 项目源代码
 
@@ -36,7 +40,7 @@
 
 ```
 String nonceStr = SDKUtils.genRandomStringByLength(32);
-UnifiedOrderRequest request = new UnifiedOrderRequest("wuspace-899",SDKUtils.genOutTradeNo(),1, "192.168.1.1", asyncNotifyUrl, "NATIVE", nonceStr);
+UnifiedOrderRequest request = new UnifiedOrderRequest("donate-899",SDKUtils.genOutTradeNo(),1, "192.168.1.1", asyncNotifyUrl, "NATIVE", nonceStr);
 UnifiedOrderResponse response = wxPayClient.execute(request);
 Assert.assertNotNull(response);
 LOG.info(JSON.toJSONString(response));
@@ -49,7 +53,7 @@ LOG.info(JSON.toJSONString(response));
 
 ```
 String nonceStr = SDKUtils.genRandomStringByLength(32);
-UnifiedOrderRequest request = new UnifiedOrderRequest("wuspace-899",SDKUtils.genOutTradeNo(),
+UnifiedOrderRequest request = new UnifiedOrderRequest("donate-899",SDKUtils.genOutTradeNo(),
                 1, "192.168.1.1", asyncNotifyUrl, "JSAPI", nonceStr);
 request.setOpenId("oKVmeuHht8J0Ni58CSNe474AHA3E");
 UnifiedOrderResponse response = wxPayClient.execute(request);
@@ -64,7 +68,7 @@ LOG.info(JSON.toJSONString(response));
 
 ```
 String nonceStr = SDKUtils.genRandomStringByLength(32);
-UnifiedOrderRequest request = new UnifiedOrderRequest("wuspace-899",SDKUtils.genOutTradeNo(),
+UnifiedOrderRequest request = new UnifiedOrderRequest("donate-899",SDKUtils.genOutTradeNo(),
                 1, "192.168.1.1", asyncNotifyUrl, "APP", nonceStr);
 UnifiedOrderResponse response = wxPayClient.execute(request);
 Assert.assertNotNull(response);
