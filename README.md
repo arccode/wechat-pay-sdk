@@ -18,7 +18,7 @@
 
 ## 架构图
 
-![](http://www.arccode.net/images/wx-pay-sdk.jpg)
+![](http://www.arccode.net/images/wx-pay-sdk-2.jpg)
 
 ## 依赖
 
