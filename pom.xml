@@ -142,7 +142,7 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                        <!-- jdk>=1.8必须配置此选项, 详见: http://www.arccode.com/2017/10/13/publish-artifact-to-maven-central-repository.html
+                        <!-- jdk>=1.8必须配置此选项, 详见: http://www.arccode.net/publish-artifact-to-maven-central-repository.html
                         <configuration>
                             <additionalparam>-Xdoclint:none</additionalparam>
                         </configuration>-->
