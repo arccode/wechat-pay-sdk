@@ -36,7 +36,6 @@ public class WXPayClientTest {
     public void before() {
 
         // 以下配置参数根据公司申请的微信支付帐号填写
-        
         String appId = "";
         String mchId = "";
         String key = "";
