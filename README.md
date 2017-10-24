@@ -34,6 +34,32 @@
 
 所有服务在单元测试类(WXPayClientTest.java)中均已测试通过, 下行参数`response.isSuccess == true`表示服务调用成功.
 
+### 初始化
+
+```
+private WXPayClient wxPayClient;
+
+private WXPayClient wxPayVIPClient;
+
+private String asyncNotifyUrl = "http://domain:port/path";
+
+@Before
+public void before() {
+
+    // 以下配置参数根据公司申请的微信支付帐号填写
+
+    String appId = "";
+    String mchId = "";
+    String key = "";
+    String certPwd = "";
+    // 绝对路径, 用于退款和商户支付
+    String certPath = "";
+
+    wxPayClient = new WXPayClient(appId, mchId, key);
+    wxPayVIPClient = new WXPayClient(appId, mchId, key, certPwd, certPath);
+}
+```
+
 ### 扫码支付
 
 官方文档详见: [https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1)
