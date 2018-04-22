@@ -74,6 +74,11 @@ public class WXPayConstants {
      */
     public static final String MCH_PAY_API = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers";
 
+    /**
+     * 查询订单
+     */
+    public static final String QUERY_ORDER = "https://api.mch.weixin.qq.com/pay/orderquery";
+
     /**==================== 商户常量 ====================**/
 
 

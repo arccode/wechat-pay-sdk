@@ -8,35 +8,13 @@ import java.util.Map;
 
 /**
  * 统一下单入参, 适用于公众号支付(JSAPI)/扫码支付(NATIVE)/APP支付(APP)
- *
+ * <p/>
  * 详见: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1
  *
  * @author http://arccode.net
  * @since 2015-11-02
  */
 public class UnifiedOrderRequest implements WXPayRequest<UnifiedOrderResponse> {
-
-    /**==================== 协议必选参数 ====================**/
-
-    /**
-     * 公众号ID, 不可空
-     */
-    private String appId;
-
-    /**
-     * 商户号, 不可空
-     */
-    private String mchId;
-
-    /**
-     * 随机字符串, 不可空
-     */
-    private String nonceStr;
-
-    /**
-     * 签名, 不可空
-     */
-    private String sign;
 
     /**==================== 协议可选参数 ====================**/
 
@@ -123,11 +101,17 @@ public class UnifiedOrderRequest implements WXPayRequest<UnifiedOrderResponse> {
      */
     private String openId;
 
+    /**
+     * 随机字符串, 不可空
+     */
+    private String nonceStr;
+
 
     public UnifiedOrderRequest() {
     }
 
-    public UnifiedOrderRequest(String body, String outTradeNo, Integer totalFee, String spBillCreateIp,
+    public UnifiedOrderRequest(String body, String outTradeNo, Integer totalFee, String
+            spBillCreateIp,
                                String notifyUrl, String tradeType, String nonceStr) {
         this.body = body;
         this.outTradeNo = outTradeNo;
@@ -173,158 +157,6 @@ public class UnifiedOrderRequest implements WXPayRequest<UnifiedOrderResponse> {
     @Override
     public Class<UnifiedOrderResponse> getResponseClass() {
         return UnifiedOrderResponse.class;
-    }
-
-    public String getAppId() {
-        return appId;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public String getMchId() {
-        return mchId;
-    }
-
-    public void setMchId(String mchId) {
-        this.mchId = mchId;
-    }
-
-    public String getNonceStr() {
-        return nonceStr;
-    }
-
-    public void setNonceStr(String nonceStr) {
-        this.nonceStr = nonceStr;
-    }
-
-    public String getSign() {
-        return sign;
-    }
-
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
-
-    public String getNotifyUrl() {
-        return notifyUrl;
-    }
-
-    public void setNotifyUrl(String notifyUrl) {
-        this.notifyUrl = notifyUrl;
-    }
-
-    public String getTradeType() {
-        return tradeType;
-    }
-
-    public void setTradeType(String tradeType) {
-        this.tradeType = tradeType;
-    }
-
-    public String getFeeType() {
-        return feeType;
-    }
-
-    public void setFeeType(String feeType) {
-        this.feeType = feeType;
-    }
-
-    public String getLimitPay() {
-        return limitPay;
-    }
-
-    public void setLimitPay(String limitPay) {
-        this.limitPay = limitPay;
-    }
-
-    public String getDeviceInfo() {
-        return deviceInfo;
-    }
-
-    public void setDeviceInfo(String deviceInfo) {
-        this.deviceInfo = deviceInfo;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
-    public String getAttach() {
-        return attach;
-    }
-
-    public void setAttach(String attach) {
-        this.attach = attach;
-    }
-
-    public String getOutTradeNo() {
-        return outTradeNo;
-    }
-
-    public void setOutTradeNo(String outTradeNo) {
-        this.outTradeNo = outTradeNo;
-    }
-
-    public Integer getTotalFee() {
-        return totalFee;
-    }
-
-    public void setTotalFee(Integer totalFee) {
-        this.totalFee = totalFee;
-    }
-
-    public String getSpBillCreateIp() {
-        return spBillCreateIp;
-    }
-
-    public void setSpBillCreateIp(String spBillCreateIp) {
-        this.spBillCreateIp = spBillCreateIp;
-    }
-
-    public String getTimeStart() {
-        return timeStart;
-    }
-
-    public void setTimeStart(String timeStart) {
-        this.timeStart = timeStart;
-    }
-
-    public String getTimeExpire() {
-        return timeExpire;
-    }
-
-    public void setTimeExpire(String timeExpire) {
-        this.timeExpire = timeExpire;
-    }
-
-    public String getGoodsTag() {
-        return goodsTag;
-    }
-
-    public void setGoodsTag(String goodsTag) {
-        this.goodsTag = goodsTag;
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
     }
 
     public String getOpenId() {
