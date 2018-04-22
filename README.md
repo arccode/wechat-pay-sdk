@@ -132,6 +132,32 @@ LOG.info(JSON.toJSONString(response));
 // TODO 开发人员根据 response中的属性值处理业务逻辑, 此处可完美嵌入业务层(小型系统)或服务层(大型系统)
 ```
 
+### 查询订单
+
+官方文档详见: [https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_2&index=4](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_2&index=4)
+
+```
+/**
+ * 查询订单详情
+ */
+@Test
+public void queryOrder() throws WXPayApiException {
+
+    String nonceStr = SDKUtils.genRandomStringByLength(32);
+    QueryOrderRequest request = new QueryOrderRequest(null, "T18042215145391412971763",
+            nonceStr);
+
+    QueryOrderResponse response = wxPayClient.execute(request);
+    Assert.assertNotNull(response);
+
+    LOG.info(JSON.toJSONString(response));
+    
+    // TODO 开发人员根据 response中的属性值处理业务逻辑, 此处可完美嵌入业务层(小型系统)或服务层(大型系统)
+
+}
+```
+
+
 ### 支付异步通知解析
 
 官方文档详见: [https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_7](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_7)
@@ -172,6 +198,23 @@ LOG.info(JSON.toJSONString(response));
 
 该SDK设计了一个服务工厂, 该工厂中包含HTTP执行器/返回数据解析方式(json/xml)/入参数据格式(json/xml)构造等, 开发人员需要增加服务仅需要根据服务协议文档编写上下行协议, 并在协议中指明API接口和返回数据类型, 再将上行协议放入工厂中执行即可; 可参考已完成的服务协议进行扩展编写.
 
+## 版本发布历史
+
+### v1.0.0
+
+初始化项目, 提供完整的开发模式和部分支付接口.
+
+* 扫码支付
+* 公众号支付
+* app支付
+* 商家支付
+* 退款
+* 异步通知解析
+
+### v1.1.0
+
+* 增加查询订单接口
+* 微重构, 简化各接口上行参数
 
 ## License
 

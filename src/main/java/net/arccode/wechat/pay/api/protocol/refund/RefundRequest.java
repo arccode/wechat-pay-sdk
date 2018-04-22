@@ -16,28 +16,6 @@ import java.util.Map;
  */
 public class RefundRequest implements WXPayRequest<RefundResponse> {
 
-    /**==================== 协议必选参数 ====================**/
-
-    /**
-     * 公众号ID, 不可空
-     */
-    private String appId;
-
-    /**
-     * 商户号, 不可空
-     */
-    private String mchId;
-
-    /**
-     * 随机字符串, 不可空
-     */
-    private String nonceStr;
-
-    /**
-     * 签名, 不可空
-     */
-    private String sign;
-
     /**==================== 协议可选参数 ====================**/
 
     /**
@@ -77,6 +55,10 @@ public class RefundRequest implements WXPayRequest<RefundResponse> {
      */
     private String opUserId;
 
+    /**
+     * 随机字符串, 不可空
+     */
+    private String nonceStr;
 
     public RefundRequest() {
     }
