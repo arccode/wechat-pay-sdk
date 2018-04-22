@@ -12,7 +12,7 @@
 <dependency>
     <groupId>net.arccode</groupId>
     <artifactId>wechat-pay-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
