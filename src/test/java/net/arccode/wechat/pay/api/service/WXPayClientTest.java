@@ -6,6 +6,8 @@ import net.arccode.wechat.pay.api.protocol.mch_pay.MchPayResponse;
 import net.arccode.wechat.pay.api.protocol.pay_notify.PayNotifyResponse;
 import net.arccode.wechat.pay.api.common.util.SDKUtils;
 import net.arccode.wechat.pay.api.protocol.mch_pay.MchPayRequest;
+import net.arccode.wechat.pay.api.protocol.query_order.QueryOrderRequest;
+import net.arccode.wechat.pay.api.protocol.query_order.QueryOrderResponse;
 import net.arccode.wechat.pay.api.protocol.refund.RefundRequest;
 import net.arccode.wechat.pay.api.protocol.refund.RefundResponse;
 import net.arccode.wechat.pay.api.protocol.unified_order.UnifiedOrderRequest;
@@ -54,7 +56,8 @@ public class WXPayClientTest {
     public void scanPay() throws WXPayApiException {
 
         String nonceStr = SDKUtils.genRandomStringByLength(32);
-        UnifiedOrderRequest request = new UnifiedOrderRequest("commodity-899",SDKUtils.genOutTradeNo(),
+        UnifiedOrderRequest request = new UnifiedOrderRequest("commodity-899", SDKUtils
+                .genOutTradeNo(),
                 1, "192.168.1.1", asyncNotifyUrl, "NATIVE", nonceStr);
 
         UnifiedOrderResponse response = wxPayClient.execute(request);
@@ -70,7 +73,8 @@ public class WXPayClientTest {
     public void jsApiPay() throws WXPayApiException {
 
         String nonceStr = SDKUtils.genRandomStringByLength(32);
-        UnifiedOrderRequest request = new UnifiedOrderRequest("commodity-899",SDKUtils.genOutTradeNo(),
+        UnifiedOrderRequest request = new UnifiedOrderRequest("commodity-899", SDKUtils
+                .genOutTradeNo(),
                 1, "192.168.1.1", asyncNotifyUrl, "JSAPI", nonceStr);
         request.setOpenId("oKVmeuHht8J0Ni58CSNe474AHA3E");
         UnifiedOrderResponse response = wxPayClient.execute(request);
@@ -87,7 +91,8 @@ public class WXPayClientTest {
     public void appPay() throws WXPayApiException {
 
         String nonceStr = SDKUtils.genRandomStringByLength(32);
-        UnifiedOrderRequest request = new UnifiedOrderRequest("commodity-899",SDKUtils.genOutTradeNo(),
+        UnifiedOrderRequest request = new UnifiedOrderRequest("commodity-899", SDKUtils
+                .genOutTradeNo(),
                 1, "192.168.1.1", asyncNotifyUrl, "APP", nonceStr);
 
         UnifiedOrderResponse response = wxPayClient.execute(request);
@@ -116,7 +121,6 @@ public class WXPayClientTest {
     }
 
 
-
     /**
      * 商户支付
      */
@@ -130,6 +134,23 @@ public class WXPayClientTest {
                 customerOpenId, "NO_CHECK", 100, "xxxx年xx月结算", "192.168.1.1", nonceStr);
 
         MchPayResponse response = wxPayVIPClient.execute(mchPayRequest);
+        Assert.assertNotNull(response);
+
+        LOG.info(JSON.toJSONString(response));
+
+    }
+
+    /**
+     * 查询订单详情
+     */
+    @Test
+    public void queryOrder() throws WXPayApiException {
+
+        String nonceStr = SDKUtils.genRandomStringByLength(32);
+        QueryOrderRequest request = new QueryOrderRequest(null, "T18042215145391412971763",
+                nonceStr);
+
+        QueryOrderResponse response = wxPayClient.execute(request);
         Assert.assertNotNull(response);
 
         LOG.info(JSON.toJSONString(response));
@@ -169,7 +190,6 @@ public class WXPayClientTest {
         LOG.info(JSON.toJSONString(response));
 
     }
-
 
 
 }
