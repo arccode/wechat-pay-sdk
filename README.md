@@ -12,7 +12,7 @@
 <dependency>
     <groupId>net.arccode</groupId>
     <artifactId>wechat-pay-sdk</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 </dependency>
 ```
 
@@ -215,6 +215,11 @@ LOG.info(JSON.toJSONString(response));
 
 * 增加查询订单接口
 * 微重构, 简化各接口上行参数
+
+### v1.1.1
+
+* XXXRequest中恢复get/set方法
+* 发布v1.1.1至Maven中央库
 
 ## License
 
