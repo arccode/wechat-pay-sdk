@@ -132,4 +132,76 @@ public class MchPayRequest implements WXPayRequest<MchPayResponse> {
     public Class<MchPayResponse> getResponseClass() {
         return MchPayResponse.class;
     }
+
+    public String getDeviceInfo() {
+        return deviceInfo;
+    }
+
+    public void setDeviceInfo(String deviceInfo) {
+        this.deviceInfo = deviceInfo;
+    }
+
+    public String getPartnerTradeNo() {
+        return partnerTradeNo;
+    }
+
+    public void setPartnerTradeNo(String partnerTradeNo) {
+        this.partnerTradeNo = partnerTradeNo;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
+
+    public String getCheckName() {
+        return checkName;
+    }
+
+    public void setCheckName(String checkName) {
+        this.checkName = checkName;
+    }
+
+    public String getReUserName() {
+        return reUserName;
+    }
+
+    public void setReUserName(String reUserName) {
+        this.reUserName = reUserName;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getSpBillCreateIp() {
+        return spBillCreateIp;
+    }
+
+    public void setSpBillCreateIp(String spBillCreateIp) {
+        this.spBillCreateIp = spBillCreateIp;
+    }
+
+    public String getNonceStr() {
+        return nonceStr;
+    }
+
+    public void setNonceStr(String nonceStr) {
+        this.nonceStr = nonceStr;
+    }
 }

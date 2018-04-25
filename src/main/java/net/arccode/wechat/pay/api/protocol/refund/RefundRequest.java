@@ -101,4 +101,68 @@ public class RefundRequest implements WXPayRequest<RefundResponse> {
     public Class<RefundResponse> getResponseClass() {
         return RefundResponse.class;
     }
+
+    public String getRefundFeeType() {
+        return refundFeeType;
+    }
+
+    public void setRefundFeeType(String refundFeeType) {
+        this.refundFeeType = refundFeeType;
+    }
+
+    public String getDeviceInfo() {
+        return deviceInfo;
+    }
+
+    public void setDeviceInfo(String deviceInfo) {
+        this.deviceInfo = deviceInfo;
+    }
+
+    public String getOutTradeNo() {
+        return outTradeNo;
+    }
+
+    public void setOutTradeNo(String outTradeNo) {
+        this.outTradeNo = outTradeNo;
+    }
+
+    public String getOutRefundNo() {
+        return outRefundNo;
+    }
+
+    public void setOutRefundNo(String outRefundNo) {
+        this.outRefundNo = outRefundNo;
+    }
+
+    public Integer getTotalFee() {
+        return totalFee;
+    }
+
+    public void setTotalFee(Integer totalFee) {
+        this.totalFee = totalFee;
+    }
+
+    public Integer getRefundFee() {
+        return refundFee;
+    }
+
+    public void setRefundFee(Integer refundFee) {
+        this.refundFee = refundFee;
+    }
+
+    public String getOpUserId() {
+        return opUserId;
+    }
+
+    public void setOpUserId(String opUserId) {
+        this.opUserId = opUserId;
+    }
+
+    public String getNonceStr() {
+        return nonceStr;
+    }
+
+    public void setNonceStr(String nonceStr) {
+        this.nonceStr = nonceStr;
+    }
 }
