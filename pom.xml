@@ -22,7 +22,7 @@
         <jdom.version>2.0.6</jdom.version>
         <slf4j.version>1.7.9</slf4j.version>
         <logback.version>1.0.9</logback.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <fast.json.version>1.1.46</fast.json.version>
         <http.client.version>4.5</http.client.version>
     </properties>
